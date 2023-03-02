@@ -1,0 +1,142 @@
+<!DOCTYPEhtml >
+< html  lang =" en " >
+
+< cabeça >
+    < meta  charset =" UTF-8 " >
+    < meta  name =" janela de visualização " conteúdo =" largura=largura do dispositivo, escala inicial=1,0 " >
+    < meta  property =" og:title " content =" DLS Card Creator " >
+    < meta  property =" og:description " content =" Um criador de cartas para o popular jogo de futebol da First Touch Games. " >
+    < meta  property =" og:url " content =" https://theshinramen.github.io/DLS-Card-Creator/DLS22/ " >
+    < title > Criador de cartões DLS </ title >
+    < link  href =" style.css " rel =" folha de estilo " >
+</ cabeça >
+
+< body  onload =" drawCard() " >
+    < cabeçalho >
+        < h1 > < a  href =" /DLS-Card-Creator/ " > Criador de cartões DLS </ a >
+            < span > por < a  href =" https://www.github.com/theshinramen/DLS-Card-Creator " target =" _blank " > shinramen </ a > </ span >
+        </h1> _ _
+    </ cabeçalho >
+    <div> _ _
+        < canvas  id =" card " width =" 510 " height =" 316 " > </ canvas >
+    </div> _ _
+    <div> _ _
+        < p > Versão
+            < select  id =" versão " onchange =" window.location.assign(`/DLS-Card-Creator/${value}`); " >
+                < valor da opção  selecionada  =" DLS19 " >
+                    DLS 19
+                </ opção >
+                < valor da opção  =" DLS21 " >
+                    DLS 21
+                </ opção >
+                < valor da opção  =" DLS22 " >
+                    DLS 22
+                </ opção >
+                < valor da opção  =" DLS23 " >
+                    DLS 23
+                </ opção >
+            </ selecionar >
+        </p> _ _
+    </div> _ _
+    < div  id =" configurações " >
+        < p > Nome
+            < input  id =" firstName " type =" text " value =" Roger " >
+            < input  id =" lastName " type =" text " value =" Guedes " >
+        </p> _ _
+        <p> _ _
+            Nacionalidade < a  href =" https://github.com/theshinramen/DLS-Files/blob/main/flags/README.md "
+                alvo =" _blank " > < sup > (?) </ sup > </ a >
+            < select  id =" Brasil " > </ select >
+            Educaçao Fisica
+            < selecionar  id =" pé " >
+                < valor da opção  =" B " >
+                    certo
+                </ opção >
+                < valor da opção  selecionada  =" L " >
+                    Direita
+                </ opção >
+                < valor da opção  =" B " >
+                    Ambos
+                </ opção >
+            </ selecionar >
+            Altura
+            < input  id =" altura " max =" 999 " min =" 1 " tipo =" número " valor " = 178 " >
+        </p> _ _
+        <p> _ _
+            posição
+            < selecionar  id =" posição " >
+                < valor da opção  =" CF " >
+                    CF
+                </ opção >
+                < valor da opção  selecionada  =" WF " >
+                    WF
+                </ opção >
+                < valor da opção  =" LM " >
+                    LM
+                </ opção >
+                < valor da opção  =" CM " >
+                    CM
+                </ opção >
+                < valor da opção  =" RM " >
+                    RM
+                </ opção >
+                < valor da opção  =" AM " >
+                    SOU
+                </ opção >
+                < valor da opção  =" DM " >
+                    DM
+                </ opção >
+                < valor da opção  =" LB " >
+                    LIBRA
+                </ opção >
+                < valor da opção  =" CB " >
+                    CB
+                </ opção >
+                < valor da opção  =" RB " >
+                    RB
+                </ opção >
+                < valor da opção  =" GK " >
+                    GK
+                </ opção >
+            </ selecionar >
+            avaliação geral
+            < input  id =" rating " max =" 100 " min =" 1 " type =" number " value =" 78" >
+        </p> _ _
+        <p> _ _
+            Estatísticas
+            < input  id =" stats1 " max =" 100 " min =" 1 " type =" number " value =" 83 " >
+            < input  id =" stats2 " max =" 100 " min =" 1 " type =" number " value =" 84 " >
+            < input  id =" stats3 " max =" 100 " min =" 1 " type =" number " value =" 75 " >
+            < input  id =" stats4 " max =" 100 " min =" 1 " type =" number " value =" 81 " >
+            < input  id =" stats5 " max =" 100 " min =" 1 " type =" number " value =" 72 " >  < br >
+            < input  id =" stats6 " max =" 100 " min =" 1 " type =" number " value =" 45 " >
+            < input  id =" stats7 " max =" 100 " min =" 1 " type =" number " value =" 76 " >
+            < input  id =" stats8 " max =" 100 " min =" 1 " type =" number " value =" 75 " >
+            < input  id =" stats9 " max =" 100 " min =" 1 " type =" number " value =" 81 " >
+            < input  id =" stats10 " max =" 100 " min =" 1 " type =" number " value =" 72 " >
+        </p> _ _
+        < p > Imagem
+            < input  accept =" imagem/gif, imagem/jpeg, imagem/png " type =" file " id =" uploadImage " />
+            < button  type =" botão " onclick =" document.getElementById('uploadImage').click(); " > Carregar imagem </ botão >
+            < botão  type =" botão " onclick =" saveCard() " > Salvar imagem </ botão >
+        </p> _ _
+    </div> _ _
+    < div  id =" botões " estilo =" posição: fixa; inferior: 20px; esquerda: 20px; " >
+        < a  href =" /DLS-Card-Creator " >
+            < img  src =" /DLS-Card-Creator/assets/icon/home.png " style =" border-radius: 10px; " height =" 30px " >
+        </a> _ _
+        < a  href =" https://www.github.com/theshinramen/DLS-Card-Creator " target =" _blank " >
+            < img  src =" /DLS-Card-Creator/assets/icon/github.png " style =" border-radius: 10px; " height =" 30px " >
+        </a> _ _
+        <a href=" https://discord.gg/uMtYYpGaZB " > _  _ _ _ _ _
+            < img  src =" /DLS-Card-Creator/assets/icon/discord.png " style =" border-radius: 10px; " height =" 30px " >
+        </a> _ _
+        < a  href =" https://www.buymeacoffee.com/shinramen " target =" _blank " >
+            < img  src =" /DLS-Card-Creator/assets/icon/bmac.png " style =" border-radius: 10px; " height =" 30px " >
+        </a> _ _
+    </div> _ _
+
+    < script  src =" script.js " > </ script >
+</ corpo >
+
+</html> _ _
